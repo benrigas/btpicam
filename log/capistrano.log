@@ -184,3 +184,82 @@ mkdir: cannot create directory ‘/var/www’: Permission denied
   INFO [e8f098a5] Running /usr/bin/env echo "Branch master (at 7d85e7fac551d749cce943f9a6e72551012358ec) deployed as release 20170903134507 by benrigas" >> /home/pi/btpicam/revisions.log as pi@picam2.local
  DEBUG [e8f098a5] Command: cd /home/pi/btpicam/releases && /usr/bin/env echo "Branch master (at 7d85e7fac551d749cce943f9a6e72551012358ec) deployed as release 20170903134507 by benrigas" >> /home/pi/btpicam/revisions.log
   INFO [e8f098a5] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-03 09:56:10 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7b749ab8] Running /usr/bin/env mkdir -p /tmp as pi@picam2.local
+ DEBUG [7b749ab8] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7b749ab8] Finished in 0.933 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-btpicam-production-benrigas.sh 0.0%
+  INFO Uploading /tmp/git-ssh-btpicam-production-benrigas.sh 100.0%
+  INFO [c08db828] Running /usr/bin/env chmod 700 /tmp/git-ssh-btpicam-production-benrigas.sh as pi@picam2.local
+ DEBUG [c08db828] Command: /usr/bin/env chmod 700 /tmp/git-ssh-btpicam-production-benrigas.sh
+  INFO [c08db828] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [4b41b586] Running /usr/bin/env git ls-remote git@github.com:benrigas/btpicam.git HEAD as pi@picam2.local
+ DEBUG [4b41b586] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-btpicam-production-benrigas.sh" ; /usr/bin/env git ls-remote git@github.com:benrigas/btpicam.git HEAD )
+ DEBUG [4b41b586] 	93e9d48bbf2afb1c97df456c91b62628f577d8dd	HEAD
+  INFO [4b41b586] Finished in 0.752 seconds with exit status 0 (successful).
+  INFO [48fce2d5] Running /usr/bin/env mkdir -p /home/pi/btpicam/shared /home/pi/btpicam/releases as pi@picam2.local
+ DEBUG [48fce2d5] Command: /usr/bin/env mkdir -p /home/pi/btpicam/shared /home/pi/btpicam/releases
+  INFO [48fce2d5] Finished in 0.019 seconds with exit status 0 (successful).
+ DEBUG [fcb24393] Running [ -f /home/pi/btpicam/current/REVISION ] as pi@picam2.local
+ DEBUG [fcb24393] Command: [ -f /home/pi/btpicam/current/REVISION ]
+ DEBUG [fcb24393] Finished in 0.015 seconds with exit status 0 (successful).
+ DEBUG [b24218ef] Running /usr/bin/env cat /home/pi/btpicam/current/REVISION 2>/dev/null as pi@picam2.local
+ DEBUG [b24218ef] Command: /usr/bin/env cat /home/pi/btpicam/current/REVISION 2>/dev/null
+ DEBUG [b24218ef] 	7d85e7fac551d749cce943f9a6e72551012358ec
+ DEBUG [b24218ef] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [91838f5a] Running [ -f /home/pi/btpicam/repo/HEAD ] as pi@picam2.local
+ DEBUG [91838f5a] Command: [ -f /home/pi/btpicam/repo/HEAD ]
+ DEBUG [91838f5a] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/pi/btpicam/repo
+ DEBUG [608eb1a5] Running if test ! -d /home/pi/btpicam/repo; then echo "Directory does not exist '/home/pi/btpicam/repo'" 1>&2; false; fi as pi@picam2.local
+ DEBUG [608eb1a5] Command: if test ! -d /home/pi/btpicam/repo; then echo "Directory does not exist '/home/pi/btpicam/repo'" 1>&2; false; fi
+ DEBUG [608eb1a5] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [c26aa892] Running /usr/bin/env git remote set-url origin git@github.com:benrigas/btpicam.git as pi@picam2.local
+ DEBUG [c26aa892] Command: cd /home/pi/btpicam/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-btpicam-production-benrigas.sh" ; /usr/bin/env git remote set-url origin git@github.com:benrigas/btpicam.git )
+  INFO [c26aa892] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [024b331b] Running /usr/bin/env git remote update --prune as pi@picam2.local
+ DEBUG [024b331b] Command: cd /home/pi/btpicam/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-btpicam-production-benrigas.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [024b331b] 	Fetching origin
+ DEBUG [024b331b] 	From github.com:benrigas/btpicam
+   7d85e7f..93e9d48  master     -> master
+  INFO [024b331b] Finished in 1.102 seconds with exit status 0 (successful).
+ DEBUG [9d9544b8] Running if test ! -d /home/pi/btpicam/repo; then echo "Directory does not exist '/home/pi/btpicam/repo'" 1>&2; false; fi as pi@picam2.local
+ DEBUG [9d9544b8] Command: if test ! -d /home/pi/btpicam/repo; then echo "Directory does not exist '/home/pi/btpicam/repo'" 1>&2; false; fi
+ DEBUG [9d9544b8] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [09fff1ce] Running /usr/bin/env mkdir -p /home/pi/btpicam/releases/20170903135612 as pi@picam2.local
+ DEBUG [09fff1ce] Command: cd /home/pi/btpicam/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-btpicam-production-benrigas.sh" ; /usr/bin/env mkdir -p /home/pi/btpicam/releases/20170903135612 )
+  INFO [09fff1ce] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [5b645f49] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/pi/btpicam/releases/20170903135612 as pi@picam2.local
+ DEBUG [5b645f49] Command: cd /home/pi/btpicam/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-btpicam-production-benrigas.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/pi/btpicam/releases/20170903135612 )
+  INFO [5b645f49] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [e4852551] Running if test ! -d /home/pi/btpicam/repo; then echo "Directory does not exist '/home/pi/btpicam/repo'" 1>&2; false; fi as pi@picam2.local
+ DEBUG [e4852551] Command: if test ! -d /home/pi/btpicam/repo; then echo "Directory does not exist '/home/pi/btpicam/repo'" 1>&2; false; fi
+ DEBUG [e4852551] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [bcaea0e2] Running /usr/bin/env git rev-list --max-count=1 master as pi@picam2.local
+ DEBUG [bcaea0e2] Command: cd /home/pi/btpicam/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-btpicam-production-benrigas.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [bcaea0e2] 	93e9d48bbf2afb1c97df456c91b62628f577d8dd
+ DEBUG [bcaea0e2] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [b3c53b17] Running if test ! -d /home/pi/btpicam/releases/20170903135612; then echo "Directory does not exist '/home/pi/btpicam/releases/20170903135612'" 1>&2; false; fi as pi@picam2.local
+ DEBUG [b3c53b17] Command: if test ! -d /home/pi/btpicam/releases/20170903135612; then echo "Directory does not exist '/home/pi/btpicam/releases/20170903135612'" 1>&2; false; fi
+ DEBUG [b3c53b17] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [1421d1bb] Running /usr/bin/env echo "93e9d48bbf2afb1c97df456c91b62628f577d8dd" >> REVISION as pi@picam2.local
+ DEBUG [1421d1bb] Command: cd /home/pi/btpicam/releases/20170903135612 && /usr/bin/env echo "93e9d48bbf2afb1c97df456c91b62628f577d8dd" >> REVISION
+  INFO [1421d1bb] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [d9a2e7bd] Running /usr/bin/env ln -s /home/pi/btpicam/releases/20170903135612 /home/pi/btpicam/releases/current as pi@picam2.local
+ DEBUG [d9a2e7bd] Command: /usr/bin/env ln -s /home/pi/btpicam/releases/20170903135612 /home/pi/btpicam/releases/current
+  INFO [d9a2e7bd] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [d8204b80] Running /usr/bin/env mv /home/pi/btpicam/releases/current /home/pi/btpicam as pi@picam2.local
+ DEBUG [d8204b80] Command: /usr/bin/env mv /home/pi/btpicam/releases/current /home/pi/btpicam
+  INFO [d8204b80] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [2ee7624b] Running /usr/bin/env ls -x /home/pi/btpicam/releases as pi@picam2.local
+ DEBUG [2ee7624b] Command: /usr/bin/env ls -x /home/pi/btpicam/releases
+ DEBUG [2ee7624b] 	20170903134507	20170903135612
+ DEBUG [2ee7624b] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [e07a982e] Running if test ! -d /home/pi/btpicam/releases; then echo "Directory does not exist '/home/pi/btpicam/releases'" 1>&2; false; fi as pi@picam2.local
+ DEBUG [e07a982e] Command: if test ! -d /home/pi/btpicam/releases; then echo "Directory does not exist '/home/pi/btpicam/releases'" 1>&2; false; fi
+ DEBUG [e07a982e] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [c855a09b] Running /usr/bin/env echo "Branch master (at 93e9d48bbf2afb1c97df456c91b62628f577d8dd) deployed as release 20170903135612 by benrigas" >> /home/pi/btpicam/revisions.log as pi@picam2.local
+ DEBUG [c855a09b] Command: cd /home/pi/btpicam/releases && /usr/bin/env echo "Branch master (at 93e9d48bbf2afb1c97df456c91b62628f577d8dd) deployed as release 20170903135612 by benrigas" >> /home/pi/btpicam/revisions.log
+  INFO [c855a09b] Finished in 0.034 seconds with exit status 0 (successful).

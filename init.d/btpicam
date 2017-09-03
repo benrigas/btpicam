@@ -1,8 +1,4 @@
 #!/bin/sh
-# kFreeBSD do not accept scripts as interpreters, using #!/bin/sh and sourcing.
-if [ true != "$INIT_D_SCRIPT_SOURCED" ] ; then
-    set "$0" "$@"; INIT_D_SCRIPT_SOURCED=true . /lib/init/init-d-script
-fi
 ### BEGIN INIT INFO
 # Provides:          skeleton
 # Required-Start:    $remote_fs $syslog
@@ -23,5 +19,38 @@ fi
 # Please remove the "Author" lines above and replace them
 # with your own name if you copy and modify this script.
 
-DESC="Bullet Time Camera Server"
-DAEMON=/home/pi/btpicam/server.py
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+do_start () {
+	python /home/pi/btpicam/current/server.py
+}
+
+do_stop () {
+	killall python
+}
+
+do_status () {
+	echo hmm
+}
+
+case "$1" in
+  start|"")
+        do_start
+        ;;
+  restart|reload|force-reload)
+        do_stop
+	do_start
+        ;;
+  stop)
+        # No-op
+        ;;
+  status)
+        do_status
+        exit $?
+        ;;
+  *)
+        echo "Usage: motd [start|stop|status]" >&2
+        exit 3
+        ;;
+esac
+
