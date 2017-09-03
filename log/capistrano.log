@@ -1,0 +1,54 @@
+# Logfile created on 2017-09-03 09:27:52 -0400 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-03 09:27:52 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7c1453dd] Running /usr/bin/env mkdir -p /tmp as pi@picam2.local
+  INFO [bf87599c] Running /usr/bin/env mkdir -p /tmp as pi@picam1.local
+ DEBUG [7c1453dd] Command: /usr/bin/env mkdir -p /tmp
+ DEBUG [bf87599c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7c1453dd] Finished in 0.848 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-benrigas.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-benrigas.sh 100.0%
+  INFO [d8b64721] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-benrigas.sh as pi@picam2.local
+ DEBUG [d8b64721] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-benrigas.sh
+  INFO [d8b64721] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-03 09:28:21 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [422c2ae4] Running /usr/bin/env mkdir -p /tmp as pi@picam2.local
+ DEBUG [422c2ae4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [422c2ae4] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-benrigas.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-benrigas.sh 100.0%
+  INFO [ab03dd54] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-benrigas.sh as pi@picam2.local
+ DEBUG [ab03dd54] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-benrigas.sh
+  INFO [ab03dd54] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [c284e087] Running /usr/bin/env git ls-remote git@example.com:me/my_repo.git HEAD as pi@picam2.local
+ DEBUG [c284e087] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-benrigas.sh" ; /usr/bin/env git ls-remote git@example.com:me/my_repo.git HEAD )
+ DEBUG [c284e087] 	/usr/bin/env: git
+ DEBUG [c284e087] 	: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-03 09:28:40 -0400 cap production uptime
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-03 09:34:38 -0400 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [cd86ecb6] Running /usr/bin/env mkdir -p /tmp as pi@picam2.local
+ DEBUG [cd86ecb6] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cd86ecb6] Finished in 0.906 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-benrigas.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-benrigas.sh 100.0%
+  INFO [b64a4dd4] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-benrigas.sh as pi@picam2.local
+ DEBUG [b64a4dd4] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-benrigas.sh
+  INFO [b64a4dd4] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [0c4ea9a1] Running /usr/bin/env git ls-remote git@example.com:me/my_repo.git HEAD as pi@picam2.local
+ DEBUG [0c4ea9a1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-benrigas.sh" ; /usr/bin/env git ls-remote git@example.com:me/my_repo.git HEAD )
+ DEBUG [0c4ea9a1] 	/usr/bin/env: git
+ DEBUG [0c4ea9a1] 	: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-03 09:37:40 -0400 cap production uptime
+  INFO ---------------------------------------------------------------------------
+  INFO [9301e352] Running /usr/bin/env uptime as pi@picam2.local
+ DEBUG [9301e352] Command: /usr/bin/env uptime
+ DEBUG [9301e352] 	 13:37:41 up 19:46,  1 user,  load average: 0.00, 0.00, 0.00
+  INFO [9301e352] Finished in 0.965 seconds with exit status 0 (successful).
